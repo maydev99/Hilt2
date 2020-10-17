@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hilt2</string>
+    <string name="hello_there">Hello There!!!</string>
+    <string name="empty">EMPTY</string>
+    <string name="main_picture">Main Picture</string>
+    <string name="api_key">d8e18a8a7e901bbd2c8355a460df2153</string>
+</resources>
