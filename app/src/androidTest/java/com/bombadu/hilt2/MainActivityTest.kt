@@ -7,22 +7,31 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
+import com.bombadu.hilt2.data.NetRequest
+import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.hamcrest.CoreMatchers.not
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import javax.inject.Inject
 
 @RunWith(AndroidJUnit4ClassRunner::class)
 @HiltAndroidTest
-
 class MainActivityTest {
 
-    /*@get:Rule
-    var hiltRule = HiltAndroidRule(this)*/
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
 
     @get:Rule
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
+
+    @Inject
+    lateinit var jobs: Jobs
+
+    @Inject
+    lateinit var netRequest: NetRequest
+
 
     @Test
     fun checkIfMainActivityIsPresent() {
